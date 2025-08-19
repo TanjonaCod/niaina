@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CV Moderne Interactif - Tanjona</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+    animation: fadeInBody 1s ease-in;
+}
+@keyframes fadeInBody { from {opacity:0;} to {opacity:1;} }
+
+.cv-container {
+    max-width: 900px;
+    margin: 30px auto;
+    display: flex;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
+}
+.sidebar {
+    width: 30%;
+    background: #0f80f1;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+}
+.sidebar img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid #3498db;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+.sidebar img:hover { transform: scale(1.1) rotate(5deg); }
+
+.sidebar h2, .sidebar h3 { margin: 5px 0; }
+.sidebar p, .sidebar a { color: #ddd; font-size: 14px; text-decoration: none; display:block; margin:5px 0; }
+.sidebar a:hover { color: #3498db; }
+
+.sidebar h3.section-title { margin-top: 25px; color: #fff; border-bottom:1px solid #3498db; padding-bottom:5px; }
+
+.main {
+    width: 70%;
+    padding: 30px;
+}
+
+.section-title {
+    font-size: 20px;
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.experience, .education, .profil-section {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 1s ease forwards;
+}
+.experience:nth-child(1), .education:nth-child(1){ animation-delay:0.3s; }
+.experience:nth-child(2), .education:nth-child(2){ animation-delay:0.5s; }
+.experience:nth-child(3){ animation-delay:0.7s; }
+
+@keyframes slideUp { to {opacity:1; transform:translateY(0);} }
+
+.skills {
+    list-style: none;
+    padding: 0;
+}
+.skills li {
+    margin-bottom: 15px;
+    text-align: left;
+}
+.skills li .skill-name { margin-bottom: 5px; font-weight: bold; }
+.skills li .skill-bar {
+    width: 100%;
+    background: #fcfcfc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.skills li .skill-bar span {
+    display: block;
+    height: 12px;
+    width: 0;
+    background: #3498db;
+    border-radius: 5px;
+    transition: width 1s ease;
+}
+.skills li:hover .skill-bar span {
+    width: attr(data-level percent);
+}
+.skills li[data-level="90"] .skill-bar span{ width: 90%; }
+.skills li[data-level="85"] .skill-bar span{ width: 85%; }
+.skills li[data-level="80"] .skill-bar span{ width: 80%; }
+.skills li[data-level="60"] .skill-bar span{ width: 60%; }
+
+
+.sidebar i, .main i { color:#3498db; margin-right:6px; }
+
+a {transition: color 0.3s;}
+</style>
+</head>
+<body>
+<div class="cv-container">
+    <div class="sidebar">
+        <img src="image/DSC_0319 (1).JPG" alt="Photo Profil">
+        <h2>Tanjona Niaina</h2>
+        <h3>RAFALIMAMONJY</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Itaosy 45 Fiadanana, 102 Antananarivo</p>
+        <p><i class="fas fa-envelope"></i> rafaltanjona@gmail.com</p>
+        <p><i class="fas fa-globe"></i> <a href="https://tanjonaocod.github.io/TjnCoder" target="_blank">tanjonaocod.github.io/TjnCoder</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/tanjona-niaina-rafalimamonjy-56463231a" target="_blank">linkedin.com/in/tanjona-niaina</a></p>
+
+        <h3 class="section-title">Compétences</h3>
+        <ul class="skills">
+            <li data-level="90"><div class="skill-name">Python</div><div class="skill-bar"><span></span></div></li>
+            <li data-level="85"><div class="skill-name">PHP</div><div class="skill-bar"><span></span></div></li>
+            <li data-level="80"><div class="skill-name">JavaScript</div><div class="skill-bar"><span></span></div></li>
+        </ul>
+
+        <h3 class="section-title">Langues</h3>
+        <ul class="skills">
+            <li data-level="80"><div class="skill-name">Français</div><div class="skill-bar"><span></span></div></li>
+            <li data-level="60"><div class="skill-name">Anglais</div><div class="skill-bar"><span></span></div></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="profil-section">
+            <h2 class="section-title"><i class="fas fa-user"></i> Profil</h2>
+            <p>Développeur full-stack basé à Madagascar. J’aime concevoir des interfaces soignées et des backends robustes. Mon objectif : livrer des produits fiables, performants et faciles à maintenir.</p>
+        </div>
+
+        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formation</h2>
+        <div class="education">
+            <h4>Développement web – Hopes Formation, Antananarivo (oct. 2022 – à ce jour)</h4>
+            <p>Acquis les bases et techniques avancées en programmation. Développé des compétences en front-end et back-end. Réalisé des projets concrets et méthodologie professionnelle.</p>
+        </div>
+        <div class="education">
+            <h4>Gestion – Université d’Antananarivo (nov. 2018 – avr. 2019)</h4>
+            <p>Acquis des connaissances en management, finance et administration. Développé compétences en analyse, planification et organisation. Travail en équipe renforcé.</p>
+        </div>
+
+        <h2 class="section-title"><i class="fas fa-briefcase"></i> Expérience professionnelle</h2>
+        <div class="experience">
+            <h4>Développeur web – Hopes Formation (avr. 2023 – à ce jour)</h4>
+            <p>Formateur développeur spécialisé en Python et développement web.</p>
+        </div>
+        <div class="experience">
+            <h4>Assistant contrôleur qualité – Groupe Infoscribe (juil. 2018 – oct. 2022)</h4>
+            <p>Contrôle et suivi qualité des productions. Développement d’une méthodologie rigoureuse et organisationnelle.</p>
+        </div>
+        <div class="experience">
+            <h4>Opérateur de traitement d’image – Groupe Infoscribe (nov. 2018 – janv. 2019)</h4>
+            <p>Correction, retouche et optimisation des images numériques. Garantie de la conformité visuelle selon les standards de qualité.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Niaina — Développeur Web Full‑Stack</title>
+  <meta name="description" content="Portfolio de Niaina, développeur web full‑stack (Laravel, Symfony, Django, React, Vue). Projets, compétences, témoignages et contact." />
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="Niaina — Développeur Web Full‑Stack" />
+  <meta property="og:description" content="Portfolio de Niaina : projets, compétences et contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Portfolio+Niaina" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🚀</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Navigation principale">
+      <a href="#accueil" class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span style="color: aliceblue;">Niaina.dev</span>
+      </a>
+      <button class="menu-toggle btn secondary" aria-expanded="false" aria-controls="menu" style="color: aliceblue;">Menu</button>
+      <nav id="menu" aria-label="Liens de section">
+        <ul>
+          <li><a href="#projets" class="nav-link">Projets</a></li>
+          <li><a href="#competences" class="nav-link">Compétences</a></li>
+          <li><a href="#apropos" class="nav-link">À propos</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="https://github.com/TanjonaCod" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="accueil" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1 class="title">Salut, je suis <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">Niaina</span></h1>
+        <p class="subtitle">Développeur Web Full‑Stack • Laravel · Symfony · Django · VueJs</p>
+        <div class="badges" aria-label="Points forts">
+          <span class="badge">+5 ans d'XP</span>
+          <span class="badge">Apps performantes</span>
+          <span class="badge">SEO & Accessibilité</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#projets" class="btn" aria-label="Voir mes projets">Voir mes projets</a>
+          <a href="#contact" class="btn secondary" aria-label="Me contacter">Me contacter</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <img src="image/web-development.gif" alt="Aperçu d'un projet récent" loading="lazy"/>
+          <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+            <span class="chip">Laravel</span>
+            <span class="chip">Django</span>
+            <span class="chip">VueJs</span>
+            <span class="chip">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projets -->
+  <section id="projets">
+    <div class="container">
+      <h2 class="section-title">Projets sélectionnés</h2>
+      <p class="section-desc">Quelques réalisations mettant en avant performance, UX et qualité du code. Chaque carte inclut la stack, un résumé et des liens.</p>
+      <div class="projects">
+        <div id="popup-overlay">
+            <div class="popup">
+              <h2>🚫 Projet personnel</h2>
+              <p>Aucune accès au public</p>
+              <button id="close-popup">OK</button>
+            </div>
+        </div>
+        <!-- Project 1 -->
+        <article class="card" aria-label="Projet CRM">
+          <img src="image/1.png" alt="Capture d'écran d'un CRM Vue + Laravel" loading="lazy"/>
+          <div class="card-body">
+            <h3>Site de voyage – Laravel & Vue.js</h3>
+            <p>Développement d’une plateforme de réservation et découverte de voyages.</p>
+            <div class="stack"><span>Laravel</span><span>Vue 3</span><span>Vuetify</span><span>MySQL</span></div>
+            <div class="card-actions">
+              <a class="btn" href="https://tanjonacod.github.io/madajacksafari/" target="_blank" rel="noopener">Voir en ligne</a>
+              <a class="btn secondary" href="https://github.com/TanjonaCod/madajacksafari" target="_blank" rel="noopener">Code source</a>
+            </div>
+          </div>
+        </article>
+        <!-- Project 2 -->
+        <article class="card" aria-label="Projet E‑commerce">
+          <img src="image/2.png" alt="Capture d'écran d'un e‑commerce Symfony" loading="lazy"/>
+          <div class="card-body">
+            <h3>Logiciel desktop – PyQt (Python)</h3>
+            <p>Conception d’un logiciel bureautique pour la gestion de [ex: étudiants, appels, vidéos].</p>
+            <div class="stack"><span>Python</span><span>PyQt5/6</span><span>SQLite</span></div>
+            <div class="card-actions">
+              <button class="btn perso" href="#" target="_blank" rel="noopener">Voir en ligne</button>
+              <button class="btn secondary perso" href="#" target="_blank" rel="noopener">Code source</button>
+            </div>
+          </div>
+        </article>
+        <!-- Project 3 -->
+        <article class="card" aria-label="Projet KivyMD">
+          <img src="image/3.png" alt="Capture d'écran d'une application KivyMD" loading="lazy"/>
+          <div class="card-body">
+            <h3>Application web de gestion de matériel</h3>
+            <p>Développement d’un système de suivi et gestion du matériel (stock et emprunts).</p>
+            <div class="stack"><span>Django</span><span>MySQL</span></div>
+            <div class="card-actions">
+              <button class="btn perso" href="#" target="_blank" rel="noopener">Voir en ligne</button>
+              <button class="btn secondary perso" href="#" target="_blank" rel="noopener">Code source</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compétences -->
+  <section id="competences">
+    <div class="container">
+      <h2 class="section-title">Compétences</h2>
+      <p class="section-desc">Du front au back, avec une attention particulière à la qualité, sécurité et maintenabilité.</p>
+      <div class="skills">
+        <div class="skill">
+          <h4>Frontend</h4>
+          <div class="chips">
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3 / SASS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Vue 3</span>
+            <span class="chip">React</span>
+            <span class="chip">Bootstrap / Tailwind</span>
+          </div>
+        </div>
+        <div class="skill">
+          <h4>Backend</h4>
+          <div class="chips">
+            <span class="chip">PHP</span>
+            <span class="chip">Laravel / Symfony</span>
+            <span class="chip">Python</span>
+            <span class="chip">Django / FastAPI</span>
+            <span class="chip">Node.js (API)</span>
+          </div>
+        </div>
+        <div class="skill">
+          <h4>Base de données & Ops</h4>
+          <div class="chips">
+            <span class="chip">MySQL</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">SQLite</span>
+            <span class="chip">Git / CI</span>
+            <span class="chip">Nginx</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- À propos -->
+  <section id="apropos">
+    <div class="container">
+      <h2 class="section-title">À propos</h2>
+      <div class="text-apropo">
+        <div>
+          <p>Développeur full‑stack basé à Madagascar. J’aime concevoir des interfaces soignées et des backends robustes. Mon objectif : livrer des produits fiables, performants et faciles à maintenir.</p>
+          <ul>
+            <li>✅ Orienté qualité (tests, revue de code, CI/CD)</li>
+            <li>✅ Accessibilité & SEO by design</li>
+            <li>✅ Communication claire avec les clients</li>
+          </ul>
+          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="#contact">Travaillons ensemble</a>
+            <a class="btn secondary" href="CV_Tanjona_Niaina_RAFALIMAMONJY.pdf" target="_blank" rel="noopener" download="download">Télécharger CV (PDF)</a>
+          </div>
+        </div>
+        <div>
+          <img src="image/DSC_0319 (1).JPG" alt="Photo de profil de Niaina" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section id="temoignages">
+    <div class="container">
+      <h2 class="section-title">Témoignages</h2>
+      <div class="testimonials">
+        <figure class="quote">
+          <figcaption>“Prestation impeccable, délais tenus et code propre.”</figcaption>
+          <div class="meta"><img class="avatar" src="image/IMG-20250610-WA0005.jpg" alt="Avatar client"/> <span>Fandresena. — Developer</span></div>
+        </figure>
+        <figure class="quote">
+          <figcaption>“Très pédagogue et force de proposition. Je recommande.”</figcaption>
+          <div class="meta"><img class="avatar" src="image/sergia.jpeg" alt="Avatar client"/> <span>Sergia. — Developer</span></div>
+        </figure>
+        <figure class="quote">
+          <figcaption>“Migration vers SPA fluide, performances x2.”</figcaption>
+          <div class="meta"><img class="avatar" src="image/tong.jpeg" alt="Avatar client"/> <span>Malala Tong. — Developer</span></div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Me contacter</h2>
+      <p class="section-desc">Un projet, une mission freelance ou une collaboration ? Écrivez‑moi 👇</p>
+      <form id="contact-form" action="https://formspree.io/f/mayvlxyz" method="POST">
+        <div class="grid-2">
+          <div>
+            <label for="nom">Nom</label>
+            <input id="nom" name="nom" type="text" placeholder="Votre nom" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="vous@exemple.com" required>
+          </div>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Décrivez brièvement votre besoin" required></textarea>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button class="btn" type="submit">Envoyer</button>
+          <small id="form-status" aria-live="polite" style="color:var(--muted)"></small>
+        </div>
+      </form>
+      <div style="margin-top:20px;color:var(--muted)">
+        <strong>Email direct :</strong> <a href="mailto:rafaltanjonaniaina@gmail.com">rafaltanjonaniaina@gmail.com</a>
+        &nbsp;•&nbsp; <strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/tanjona-niaina-rafalimamonjy-56463231a/" target="_blank" rel="noopener">niaina</a>
+        &nbsp;•&nbsp; <strong>Télephone :</strong> <a href="tel:+261 38 22 850 78" target="_blank" rel="noopener">+261 38 22 850 78</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <span>© <span id="year"></span> Niaina. Tous droits réservés.</span>
+      <div style="display:flex;gap:12px">
+        <a href="#accueil">Haut de page</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Burger menu (mobile)
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('nav ul');
+    if(toggle){
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('active')
+      });
+    }
+
+    document.querySelectorAll('.nav-link').forEach(lien =>{
+      lien.addEventListener('click',()=>{
+        menu.classList.remove('active')
+      })
+    })
+
+    //pop 
+    document.querySelectorAll('.perso').forEach(btn =>{
+        btn.addEventListener("click",()=>{
+            document.querySelector('#popup-overlay').classList.add('active')
+        })
+    })
+
+    document.getElementById("close-popup").addEventListener("click", () => {
+          document.getElementById("popup-overlay").classList.remove('active')
+    });
+
+    // Yearli
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form (progressive enhancement)
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('form-status');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        // If action is set to Formspree (or custom backend), we'll try fetch; otherwise fallback to default submit
+        const action = form.getAttribute('action');
+        if(!action || !action.startsWith('http')) return; // normal submit
+        e.preventDefault();
+        statusEl.textContent = 'Envoi en cours…';
+        const data = new FormData(form);
+        try {
+          const res = await fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+          if (res.ok) {
+            statusEl.textContent = 'Merci ! Votre message a été envoyé.';
+            form.reset();
+          } else {
+            statusEl.textContent = "Oups, une erreur est survenue. Écrivez‑moi à l'email ci‑dessus.";
+          }
+        } catch (err) {
+          statusEl.textContent = "Impossible d'envoyer pour le moment. Contact par email conseillé.";
+        }
+      });
+    }
+
+    // Smooth scroll fix for sticky header offset (optional)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el){
+          e.preventDefault();
+          const y = el.getBoundingClientRect().top + window.scrollY - 70;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      })
+    })
+  </script>
+</body>
+</html>
