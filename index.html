@@ -207,37 +207,37 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Me contacter</h2>
-      <p class="section-desc">Un projet, une mission freelance ou une collaboration ? Écrivez‑moi 👇</p>
-      <form id="contact-form" action="https://formspree.io/f/mayvlxyz" method="POST">
-        <div class="grid-2">
-          <div>
-            <label for="nom">Nom</label>
-            <input id="nom" name="nom" type="text" placeholder="Votre nom" required>
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="vous@exemple.com" required>
-          </div>
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Me contacter</h2>
+    <p class="section-desc">Un projet, une mission freelance ou une collaboration ? Écrivez-moi 👇</p>
+    <form id="contact-form">
+      <div class="grid-2">
+        <div>
+          <label for="nom">Nom</label>
+          <input id="nom" name="from_name" type="text" placeholder="Votre nom" required>
         </div>
         <div>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Décrivez brièvement votre besoin" required></textarea>
+          <label for="email">Email</label>
+          <input id="email" name="from_email" type="email" placeholder="vous@exemple.com" required>
         </div>
-        <div style="display:flex;gap:10px;align-items:center">
-          <button class="btn" type="submit">Envoyer</button>
-          <small id="form-status" aria-live="polite" style="color:var(--muted)"></small>
-        </div>
-      </form>
-      <div style="margin-top:20px;color:var(--muted)">
-        <strong>Email direct :</strong> <a href="mailto:rafaltanjonaniaina@gmail.com">rafaltanjonaniaina@gmail.com</a>
-        &nbsp;•&nbsp; <strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/tanjona-niaina-rafalimamonjy-56463231a/" target="_blank" rel="noopener">niaina</a>
-        &nbsp;•&nbsp; <strong>Télephone :</strong> <a href="tel:+261 38 22 850 78" target="_blank" rel="noopener">+261 38 22 850 78</a>
       </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Décrivez brièvement votre besoin" required></textarea>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="btn" type="submit">Envoyer</button>
+        <small id="form-status" aria-live="polite" style="color:var(--muted)"></small>
+      </div>
+    </form>
+    <div style="margin-top:20px;color:var(--muted)">
+      <strong>Email direct :</strong> <a href="mailto:rafaltanjonaniaina@gmail.com">rafaltanjonaniaina@gmail.com</a>
+      &nbsp;•&nbsp; <strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/tanjona-niaina-rafalimamonjy-56463231a/" target="_blank" rel="noopener">niaina</a>
+      &nbsp;•&nbsp; <strong>Télephone :</strong> <a href="tel:+261382285078" target="_blank" rel="noopener">+261 38 22 850 78</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <footer>
     <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
@@ -249,8 +249,28 @@
       </div>
     </div>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
+    // email
+      (function() {
+        emailjs.init("Qbd0U6ASuh_jOM3Ts");
+      })();
+
+      const form = document.getElementById('contact-form');
+      const statusEl = document.getElementById('form-status');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        statusEl.textContent = "Envoi en cours…";
+
+        emailjs.sendForm("service_8jkemwf", "template_vlgu6dv", this)
+          .then(() => {
+            statusEl.textContent = "✅ Merci ! Votre message a bien été envoyé.";
+            form.reset();
+          }, (err) => {
+            statusEl.textContent = "❌ Erreur lors de l'envoi : " + JSON.stringify(err);
+          });
+      });
     // Burger menu (mobile)
     const toggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('nav ul');
@@ -277,33 +297,6 @@
           document.getElementById("popup-overlay").classList.remove('active')
     });
 
-    // Yearli
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Contact form (progressive enhancement)
-    const form = document.getElementById('contact-form');
-    const statusEl = document.getElementById('form-status');
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        // If action is set to Formspree (or custom backend), we'll try fetch; otherwise fallback to default submit
-        const action = form.getAttribute('action');
-        if(!action || !action.startsWith('http')) return; // normal submit
-        e.preventDefault();
-        statusEl.textContent = 'Envoi en cours…';
-        const data = new FormData(form);
-        try {
-          const res = await fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-          if (res.ok) {
-            statusEl.textContent = 'Merci ! Votre message a été envoyé.';
-            form.reset();
-          } else {
-            statusEl.textContent = "Oups, une erreur est survenue. Écrivez‑moi à l'email ci‑dessus.";
-          }
-        } catch (err) {
-          statusEl.textContent = "Impossible d'envoyer pour le moment. Contact par email conseillé.";
-        }
-      });
-    }
 
     // Smooth scroll fix for sticky header offset (optional)
     document.querySelectorAll('a[href^="#"]').forEach(a => {
