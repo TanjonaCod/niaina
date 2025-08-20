@@ -260,9 +260,33 @@
       const statusEl = document.getElementById('form-status');
 
       form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        statusEl.textContent = "Envoi en cours…";
+  e.preventDefault();
 
+  const emailInput = document.getElementById('email');
+
+  // Vérifie si le champ existe
+  if (!emailInput) {
+    statusEl.textContent = "❌ Champ email introuvable.";
+    return;
+  }
+
+  const emailValue = emailInput.value.trim();
+
+        // Vérifie si vide
+        if (!emailValue) {
+          statusEl.textContent = "❌ Merci de renseigner votre email.";
+          return;
+        }
+
+        // Vérifie si valide (regex basique)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailValue)) {
+          statusEl.textContent = "❌ Adresse email invalide.";
+          return;
+        }
+
+        // Si tout est bon → on envoie avec EmailJS
+        statusEl.textContent = "Envoi en cours…";
         emailjs.sendForm("service_8jkemwf", "template_vlgu6dv", this)
           .then(() => {
             statusEl.textContent = "✅ Merci ! Votre message a bien été envoyé.";
