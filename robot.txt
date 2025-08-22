@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tanjonacod.github.io/niaina/sitemap.xml
