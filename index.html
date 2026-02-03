@@ -315,37 +315,42 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-        const form = document.getElementById('contact-form');
-        const statusEl = document.getElementById('form-status');
+const form = document.getElementById('contact-form');
+const statusEl = document.getElementById('form-status');
 
-        form.addEventListener('submit', function(e) {
-        e.preventDefault();
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
 
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
+  const name = document.getElementById('nom').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
 
-        if (!email) {
-            statusEl.textContent = "❌ Merci de renseigner votre email.";
-            return;
-        }
+  // Validation
+  if (!name || !email || !message) {
+    statusEl.textContent = "❌ Fenoy daholo azafady.";
+    return;
+  }
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            statusEl.textContent = "❌ Adresse email invalide.";
-            return;
-        }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    statusEl.textContent = "❌ Email tsy mety.";
+    return;
+  }
 
-        // Construction du contenu du mail
-        const subject = encodeURIComponent("Nouveau message depuis le site");
-        const body = encodeURIComponent(
-            `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-        );
+  statusEl.textContent = "📧 Manokatra email...";
 
-        window.location.href = `mailto:rafaltanjonaniaina@gmail.com?subject=${subject}&body=${body}`;
+  // Sujet & contenu
+  const subject = encodeURIComponent("Nouveau message depuis le site");
+  const body = encodeURIComponent(
+    `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+  );
 
-        statusEl.textContent = "📧 Ouverture de votre application email...";
-        })
+  // SOLOINAO amin'ny email-nao
+  const toEmail = "rafaltanjonaniaina@gmail.com";
+
+  // Manokatra Gmail / Outlook / Mail app
+  window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
+});
 
     // Burger menu (mobile)
     const toggle = document.querySelector('.menu-toggle');
