@@ -315,50 +315,38 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    // email
-      (function() {
-        emailjs.init("Qbd0U6ASuh_jOM3Ts");
-      })();
+        const form = document.getElementById('contact-form');
+        const statusEl = document.getElementById('form-status');
 
-      const form = document.getElementById('contact-form');
-      const statusEl = document.getElementById('form-status');
+        form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-      form.addEventListener('submit', function(e) {
-  e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-  const emailInput = document.getElementById('email');
-
-  // Vérifie si le champ existe
-  if (!emailInput) {
-    statusEl.textContent = "❌ Champ email introuvable.";
-    return;
-  }
-
-  const emailValue = emailInput.value.trim();
-
-        // Vérifie si vide
-        if (!emailValue) {
-          statusEl.textContent = "❌ Merci de renseigner votre email.";
-          return;
+        if (!email) {
+            statusEl.textContent = "❌ Merci de renseigner votre email.";
+            return;
         }
 
-        // Vérifie si valide (regex basique)
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(emailValue)) {
-          statusEl.textContent = "❌ Adresse email invalide.";
-          return;
+        if (!emailRegex.test(email)) {
+            statusEl.textContent = "❌ Adresse email invalide.";
+            return;
         }
 
-        // Si tout est bon → on envoie avec EmailJS
-        statusEl.textContent = "Envoi en cours…";
-        emailjs.sendForm("service_8jkemwf", "template_vlgu6dv", this)
-          .then(() => {
-            statusEl.textContent = "✅ Merci ! Votre message a bien été envoyé.";
-            form.reset();
-          }, (err) => {
-            statusEl.textContent = "❌ Erreur lors de l'envoi : " + JSON.stringify(err);
-          });
-      });
+        // Construction du contenu du mail
+        const subject = encodeURIComponent("Nouveau message depuis le site");
+        const body = encodeURIComponent(
+            `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        );
+
+        window.location.href = `mailto:tonemail@gmail.com?subject=${subject}&body=${body}`;
+
+        statusEl.textContent = "📧 Ouverture de votre application email...";
+        })
+
     // Burger menu (mobile)
     const toggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('nav ul');
