@@ -327,17 +327,17 @@ form.addEventListener('submit', function(e) {
 
   // Validation
   if (!name || !email || !message) {
-    statusEl.textContent = "❌ Fenoy daholo azafady.";
+    statusEl.textContent = "❌ Tout les champs sont obligatoire.";
     return;
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    statusEl.textContent = "❌ Email tsy mety.";
+    statusEl.textContent = "❌ Email invalide.";
     return;
   }
 
-  statusEl.textContent = "📧 Manokatra email...";
+  statusEl.textContent = "📧 ouverture de votre boite email...";
 
   // Sujet & contenu
   const subject = encodeURIComponent("Nouveau message depuis le site");
