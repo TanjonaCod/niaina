@@ -1,0 +1,14 @@
+  <meta property="og:title" content="Niaina — Développeur Web Full-Stack" />
+  <meta property="og:description" content="Portfolio de Niaina : projets, compétences et contact. " />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tanjonacod.github.io/niaina/" />
+  <meta property="og:image" content="https://tanjonacod.github.io/niaina/assets/preview.png" />
+  <meta property="og:site_name" content="Portfolio Niaina" />
+  <meta name="google-site-verification" content="CODE_GSC">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Niaina — Développeur Web Full-Stack">
+  <meta name="twitter:description" content="Découvrez mon portfolio avec projets, compétences et contact.">
+  <meta name="twitter:image" content="https://tanjonacod.github.io/niaina/assets/preview.png">
+
+  <link rel="icon" type="image/png" href="https://tanjonacod.github.io/niaina/assets/favicon.png" />

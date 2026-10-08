@@ -1,396 +1,444 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Niaina — Développeur Web Full-Stack</title>
-  <meta name="description" content="Portfolio de Niaina, développeur web full-stack (Laravel, Symfony, Django, React, Vue). Découvrez mes projets, compétences, témoignages et contactez-moi." />
-  <meta name="keywords" content="portfolio, développeur web, full-stack, Laravel, Symfony, Django, React, Vue, Madagascar">
-  <meta name="author" content="Niaina">
-  <meta name="robots" content="index, follow">
+  <meta name="description"
+    content="Portfolio de Niaina, développeur web full-stack (Laravel, Symfony, Django, React, Vue)." />
   <link rel="canonical" href="https://tanjonacod.github.io/niaina/" />
-
-
-  <meta name="color-scheme" content="light dark">
-
-  <meta property="og:title" content="Niaina — Développeur Web Full-Stack" />
-  <meta property="og:description" content="Portfolio de Niaina : projets, compétences et contact. " />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tanjonacod.github.io/niaina/" />
-  <meta property="og:image" content="https://tanjonacod.github.io/niaina/assets/preview.png" />
-  <meta property="og:site_name" content="Portfolio Niaina" />
+    <meta property="og:site_name" content="Portfolio Tankona Niaina" />
   <meta name="google-site-verification" content="CODE_GSC">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Niaina — Développeur Web Full-Stack">
+  <meta name="twitter:title" content="Tanjona Niaina — Développeur Web Full-Stack">
   <meta name="twitter:description" content="Découvrez mon portfolio avec projets, compétences et contact.">
-  <meta name="twitter:image" content="https://tanjonacod.github.io/niaina/assets/preview.png">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
 
-  <link rel="icon" type="image/png" href="https://tanjonacod.github.io/niaina/assets/favicon.png" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <!-- Header / Nav -->
-  <header>
-    <div class="container nav" role="navigation" aria-label="Navigation principale">
-      <a href="#accueil" class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <span style="color: aliceblue;">Niaina.dev</span>
+  <!-- Curseur custom -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#hero" class="brand">
+        <span class="logo-dot"></span>
+        <span>Niaina<span class="dot">.</span>dev</span>
       </a>
-      <button class="menu-toggle btn secondary" aria-expanded="false" aria-controls="menu" style="color: aliceblue;">Menu</button>
-      <nav id="menu" aria-label="Liens de section">
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span>
+      </button>
+
+      <nav id="menu" aria-label="Navigation principale">
         <ul>
           <li><a href="#projets" class="nav-link">Projets</a></li>
           <li><a href="#competences" class="nav-link">Compétences</a></li>
           <li><a href="#apropos" class="nav-link">À propos</a></li>
+          <li><a href="#temoignages" class="nav-link">Témoignages</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
-          <li><a href="https://github.com/TanjonaCod" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+          <li><a href="https://github.com/TanjonaCod" target="_blank" rel="noopener" class="nav-link cta-mini">GitHub
+              ↗</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="accueil" class="hero">
-    <div class="container hero-grid">
-      <div>
-        <h1 class="title">Salut, je suis <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">Niaina</span></h1>
-        <p class="subtitle">Développeur Web Full‑Stack • Laravel · Symfony · Django · VueJs</p>
-        <div class="badges" aria-label="Points forts">
-          <span class="badge">+5 ans d'XP</span>
-          <span class="badge">Apps performantes</span>
-          <span class="badge">SEO & Accessibilité</span>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <a href="#projets" class="btn" aria-label="Voir mes projets">Voir mes projets</a>
-          <a href="#contact" class="btn secondary" aria-label="Me contacter">Me contacter</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-card">
-          <img src="image/web-development.gif" alt="Aperçu d'un projet récent" loading="lazy"/>
-          <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
-            <span class="chip">Laravel</span>
-            <span class="chip">Django</span>
-            <span class="chip">VueJs</span>
-            <span class="chip">PostgreSQL</span>
+  <main>
+
+    <!-- ============ 01 · HERO ============ -->
+    <section id="hero" class="panel panel-hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="eyebrow">
+            <span class="pulse"></span> Disponible pour missions freelance
+          </div>
+
+          <h1 class="title">
+            <span class="line"><span>Salut, je suis</span></span>
+            <span class="line"><span class="gradient-text">Niaina</span></span>
+            <span class="line"><span class="italic">Développeur</span></span>
+            <span class="line"><span>Full-Stack.</span></span>
+          </h1>
+
+          <p class="subtitle">
+            Je conçois des applications web performantes, sécurisées et élégantes —
+            du backend Laravel/Django au frontend Vue/React.
+          </p>
+
+          <div class="badges">
+            <span class="badge">+5 ans d'XP</span>
+            <span class="badge">Apps performantes</span>
+            <span class="badge">SEO & Accessibilité</span>
+          </div>
+
+          <div class="cta-row">
+            <a href="#projets" class="btn">Voir mes projets <span class="arrow">→</span></a>
+            <a href="#contact" class="btn ghost">Me contacter</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Projets -->
-  <section id="projets">
-    <div class="container">
-      <h2 class="section-title">Projets sélectionnés</h2>
-      <p class="section-desc">Quelques réalisations mettant en avant performance, UX et qualité du code. Chaque carte inclut la stack, un résumé et des liens.</p>
-      <div class="projects">
-        <div id="popup-overlay">
-            <div class="popup">
-              <h2>🚫 Projet personnel</h2>
-              <p>Aucune accès au public</p>
-              <button id="close-popup">OK</button>
-            </div>
-        </div>
-        <!-- Project 1 -->
-        <article class="card" aria-label="Projet CRM">
-          <img src="image/Macbook-Air-madajackssafari.co.mg.png" alt="Capture d'écran d'un CRM Vue + Laravel" loading="lazy"/>
-          <div class="card-body">
-            <h3>Site de voyage – Laravel & Vue.js</h3>
-            <p>Développement d’une plateforme de réservation et découverte de voyages.</p>
-            <div class="stack"><span>Laravel</span><span>Vue 3</span><span>Vuetify</span><span>MySQL</span></div>
-            <div class="card-actions">
-              <a class="btn" href="https://madajackssafari.co.mg/" target="_blank" rel="noopener">Voir en ligne</a>
-              <a class="btn secondary perso" target="_blank" rel="noopener">Code source</a>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <img src="image/web-development.gif" alt="Aperçu d'un projet récent" loading="lazy" />
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">PHP</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">PostgreSQL</span>
             </div>
           </div>
-        </article>
-        <!-- Project 2 -->
-        <article class="card" aria-label="Projet Logiciel de Devis">
-          <img src="image/devis.png" alt="Capture d'écran Logiciel de Devis" loading="lazy"/>
-          <div class="card-body">
-            <h3>Logiciel de Devis – PyQt6 (Python)</h3>
-            <p>Conception d’un logiciel desktop pour créer, gérer et exporter des devis professionnels.</p>
-            <div class="stack"><span>Python</span><span>PyQt6</span><span>SQLite</span></div>
-            <div class="card-actions">
-              <button class="btn perso" href="#" target="_blank" rel="noopener">Voir en ligne</button>
-              <button class="btn secondary perso" href="#" target="_blank" rel="noopener">Code source</button>
+          <div class="floating-tag tag-1"> 5+ ans</div>
+          <div class="floating-tag tag-2">20+ projets</div>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <span class="line-down"></span>
+      </div>
+    </section>
+
+    <!-- ============ 02 · PROJETS ============ -->
+    <section id="projets" class="panel">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">01 — Projets</span>
+          <h2 class="section-title">Réalisations<br><em>sélectionnées</em></h2>
+          <p class="section-desc">
+            Une sélection de projets mettant en avant performance, UX et qualité du code.
+          </p>
+        </div>
+
+        <div class="projects">
+          <!-- Project 1 -->
+          <article class="card">
+            <div class="card-media">
+              <img src="image/Macbook-Air-traspig.com (1).png" alt="CRM Vue + Laravel" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Gestion de projet — Laravel & Vue.js</h3>
+              <p>Plateforme de gestion de projet informatique pour équipes techniques.</p>
+              <div class="stack"><span>Laravel</span><span>Vue 3</span><span>Filament</span><span>MySQL</span></div>
+              <div class="card-actions">
+                <a class="btn small" href="https://traspig.com" target="_blank" rel="noopener">Voir en ligne ↗</a>
+                <button class="btn ghost small perso">Code source</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="card">
+            <div class="card-media">
+              <img src="image/image.png" alt="Logiciel medical flet" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Application médicale — Flet (Python)</h3>
+              <p>Logiciel desktop pour créer, gérer et exporter des devis médicaux.</p>
+              <div class="stack"><span>Python</span><span>Flet</span><span>SQLite</span></div>
+              <div class="card-actions">
+                <button class="btn small perso">Voir en ligne</button>
+                <button class="btn ghost small perso">Code source</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card">
+            <div class="card-media">
+              <img src="image/Macbook-Air-127.0.0.1 (2).png" alt="Site église Jesosy Mamonjy" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Église Jesosy Mamonjy — Live Vidéo</h3>
+              <p>Site web de diffusion des cultes en direct (Live Streaming).</p>
+              <div class="stack"><span>Python</span><span>Django</span><span>MySQL</span></div>
+              <div class="card-actions">
+                <button class="btn small perso">En maintenance</button>
+                <button class="btn ghost small perso">Code source</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="card">
+            <div class="card-media">
+              <img src="image/Gestion Medical.jpg" alt="Fandry Pharma" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Fandry Pharma</h3>
+              <p>Logiciel et application de gestion médicale pour pharmacies.</p>
+              <div class="stack"><span>Pyside6</span><span>MySQL</span></div>
+              <div class="card-actions">
+                <button class="btn small perso">Voir en ligne</button>
+                <button class="btn ghost small perso">Code source</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="card">
+            <div class="card-media">
+              <img src="image/securised video.JPG" alt="Application Sécurisée Vidéo" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Application Sécurisée Vidéo</h3>
+              <p>Lecture vidéo sécurisée avec chiffrement et contrôle d'accès.</p>
+              <div class="stack"><span>Pyside6</span><span>AES</span><span>SQLite</span></div>
+              <div class="card-actions">
+                <button class="btn small perso">Voir en ligne</button>
+                <button class="btn ghost small perso">Code source</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="card">
+            <div class="card-media">
+              <img src="image/Fandry School getion scolaire.jpg" alt="Fandry School" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Fandry School</h3>
+              <p>Logiciel complet de gestion scolaire (élèves, notes, paiements).</p>
+              <div class="stack"><span>PyQt6</span><span>MySQL</span></div>
+              <div class="card-actions">
+                <button class="btn small " href="https://fandryschool.netlify.app/">Voir en ligne</button>
+                <!-- <button class="btn ghost small perso">Code source</button> -->
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 · COMPÉTENCES ============ -->
+    <section id="competences" class="panel">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">02 — Compétences</span>
+          <h2 class="section-title">Stack<br><em>technique</em></h2>
+          <p class="section-desc">Du front au back, avec attention à la qualité, sécurité et maintenabilité.</p>
+        </div>
+
+        <div class="skills">
+          <div class="skill">
+            <span class="skill-num">01</span>
+            <h4>Frontend</h4>
+            <div class="chips">
+              <span class="chip">HTML5</span>
+              <span class="chip">CSS3 / SASS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Vue 3</span>
+              <span class="chip">React</span>
+              <span class="chip">Tailwind</span>
             </div>
           </div>
-        </article>
-        
-      <!-- Project 3 -->
-      <article class="card" aria-label="Projet Site Église Jesosy Mamonjy">
-        <img src="image/Macbook-Air-127.0.0.1 (2).png" alt="Capture d'écran site église Jesosy Mamonjy" loading="lazy"/>
-        <div class="card-body">
-          <h3>Site Église Jesosy Mamonjy – Live Vidéo</h3>
-          <p>Développement d’un site web permettant aux fidèles de regarder les cultes et événements en direct (Live Streaming).</p>
-          <div class="stack"><span>Python</span><span>Django</span><span>MySQL</span></div>
-          <div class="card-actions">
-            <button class="btn perso" href="#" target="_blank" rel="noopener" disabled>En Maintenance</button>
-            <button class="btn secondary perso" href="#" target="_blank" rel="noopener">Code source</button>
-          </div>
-        </div>
-      </article>
 
-      <!-- Project 4 -->
-      <article class="card" aria-label="Projet RH Manager">
-        <img src="image/RH.jpg" alt="Capture d'écran RH Manager" loading="lazy"/>
-        <div class="card-body">
-          <h3>RH Manager</h3>
-          <p>Développement d’une application de gestion des ressources humaines avec suivi des employés et des tâches.</p>
-          <div class="stack"><span>PyQt6</span><span>SQLite</span></div>
-          <div class="card-actions">
-            <button class="btn perso" href="#" target="_blank" rel="noopener">Voir en ligne</button>
-            <button class="btn secondary perso" href="#" target="_blank" rel="noopener">Code source</button>
+          <div class="skill">
+            <span class="skill-num">02</span>
+            <h4>Backend</h4>
+            <div class="chips">
+              <span class="chip">PHP</span>
+              <span class="chip">Laravel</span>
+              <span class="chip">Python</span>
+              <span class="chip">Django</span>
+              <span class="chip">FastAPI</span>
+              <span class="chip">Flask</span>
+              <span class="chip">Node.js</span>
+            </div>
           </div>
-        </div>
-      </article>
 
-      <!-- Project 5 -->
-      <article class="card" aria-label="Projet Application Sécurisée Vidéo">
-        <img src="image/app securt.png" alt="Capture d'écran Application Sécurisée Vidéo" loading="lazy"/>
-        <div class="card-body">
-          <h3>Application Sécurisée Vidéo</h3>
-          <p>Développement d’une application de lecture vidéo sécurisée avec chiffrement et contrôle d’accès.</p>
-          <div class="stack"><span>PyQt6</span><span>AES / SQLite</span></div>
-          <div class="card-actions">
-            <button class="btn perso" href="#" target="_blank" rel="noopener">Voir en ligne</button>
-            <button class="btn secondary perso" href="#" target="_blank" rel="noopener">Code source</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 6 -->
-      <article class="card" aria-label="Projet Logiciel de Vente">
-        <img src="image/Logicie_de_vente.jpg" alt="Capture d'écran Logiciel de Vente" loading="lazy"/>
-        <div class="card-body">
-          <h3>Logiciel de Vente</h3>
-          <p>Développement d’un logiciel de gestion des ventes et inventaire avec suivi des commandes et clients.</p>
-          <div class="stack"><span>PyQt6</span><span>SQLite</span></div>
-          <div class="card-actions">
-            <button class="btn perso" href="#" target="_blank" rel="noopener">Voir en ligne</button>
-            <button class="btn secondary perso" href="#" target="_blank" rel="noopener">Code source</button>
-          </div>
-        </div>
-      </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Compétences -->
-  <section id="competences">
-    <div class="container">
-      <h2 class="section-title">Compétences</h2>
-      <p class="section-desc">Du front au back, avec une attention particulière à la qualité, sécurité et maintenabilité.</p>
-      <div class="skills">
-        <div class="skill">
-          <h4>Frontend</h4>
-          <div class="chips">
-            <span class="chip">HTML5</span>
-            <span class="chip">CSS3 / SASS</span>
-            <span class="chip">JavaScript</span>
-            <span class="chip">Vue 3</span>
-            <span class="chip">React</span>
-            <span class="chip">Bootstrap / Tailwind</span>
-          </div>
-        </div>
-        <div class="skill">
-          <h4>Backend</h4>
-          <div class="chips">
-            <span class="chip">PHP</span>
-            <span class="chip">Laravel</span>
-            <span class="chip">Python</span>
-            <span class="chip">Django / FastAPI / Flask</span>
-            <span class="chip">Node.js (API)</span>
-          </div>
-        </div>
-        <div class="skill">
-          <h4>Base de données & Ops</h4>
-          <div class="chips">
-            <span class="chip">MySQL</span>
-            <span class="chip">PostgreSQL</span>
-            <span class="chip">SQLite</span>
-            <span class="chip">Git / CI</span>
-            <span class="chip">Nginx</span>
+          <div class="skill">
+            <span class="skill-num">03</span>
+            <h4>Base de données & Ops</h4>
+            <div class="chips">
+              <span class="chip">MySQL</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">SQLite</span>
+              <span class="chip">Git / CI</span>
+              <span class="chip">Nginx</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- À propos -->
-  <section id="apropos">
-    <div class="container">
-      <h2 class="section-title">À propos</h2>
-      <div class="text-apropo">
-        <div>
-          <p>Développeur full‑stack basé à Madagascar. J’aime concevoir des interfaces soignées et des backends robustes. Mon objectif : livrer des produits fiables, performants et faciles à maintenir.</p>
-          <ul>
-            <li>✅ Orienté qualité (tests, revue de code, CI/CD)</li>
-            <li>✅ Accessibilité & SEO by design</li>
-            <li>✅ Communication claire avec les clients</li>
+      <!-- Marquee décoratif -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>LARAVEL</span><span>·</span><span>DJANGO</span><span>·</span><span>VUE 3</span><span>·</span>
+          <span>REACT</span><span>·</span><span>PYTHON</span><span>·</span><span>POSTGRESQL</span><span>·</span>
+          <span>LARAVEL</span><span>·</span><span>DJANGO</span><span>·</span><span>VUE 3</span><span>·</span>
+          <span>REACT</span><span>·</span><span>PYTHON</span><span>·</span><span>POSTGRESQL</span><span>·</span>
+          <span>Fast API</span><span>·</span><span>flet</span><span>·</span><span>MySQL</span><span>·</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 · À PROPOS ============ -->
+    <section id="apropos" class="panel">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <img src="image/tanjona.jpg" alt="Photo de Niaina" loading="lazy">
+          <div class="about-frame"></div>
+        </div>
+
+        <div class="about-text">
+          <span class="section-num">03 — À propos</span>
+          <h2 class="section-title">Basé à<br><em>Madagascar</em></h2>
+          <p>
+            Développeur full-stack, j'aime concevoir des interfaces soignées et des backends
+            robustes. Mon objectif : livrer des produits fiables, performants et faciles à maintenir.
+          </p>
+          <ul class="checklist">
+            <li>Orienté qualité (tests, revue de code, CI/CD)</li>
+            <li>Accessibilité & SEO by design</li>
+            <li>Communication claire avec les clients</li>
           </ul>
-          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn" href="#contact">Travaillons ensemble</a>
-            <a class="btn secondary" href="image/CV-Vf.pdf" target="_blank" rel="noopener" download="download" style="margin-bottom: 20px;">Télécharger CV (PDF)</a>
+
+          <div class="cta-row">
+            <a class="btn" href="#contact">Travaillons ensemble →</a>
+            <a class="btn ghost" href="tanjonadev.pdf" target="_blank" rel="noopener" download>Télécharger CV</a>
           </div>
         </div>
-        <div>
-          <img src="image/DSC_0319 (1).JPG" alt="Photo de profil de Niaina" loading="lazy">
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Témoignages -->
-  <section id="temoignages">
-    <div class="container">
-      <h2 class="section-title">Témoignages</h2>
-      <div class="testimonials">
-        <figure class="quote">
-          <figcaption>“Prestation impeccable, délais tenus et code propre.”</figcaption>
-          <div class="meta"><img class="avatar" src="image/IMG-20250610-WA0005.jpg" alt="Avatar client"/> <span>Fandresena. — Developer</span></div>
-        </figure>
-        <figure class="quote">
-          <figcaption>“Très pédagogue et force de proposition. Je recommande.”</figcaption>
-          <div class="meta"><img class="avatar" src="image/sergia.jpeg" alt="Avatar client"/> <span>Sergia. — Developer</span></div>
-        </figure>
-        <figure class="quote">
-          <figcaption>“Migration vers SPA fluide, performances x2.”</figcaption>
-          <div class="meta"><img class="avatar" src="image/tong.jpeg" alt="Avatar client"/> <span>Malala Tong. — Developer</span></div>
-        </figure>
-      </div>
-    </div>
-  </section>
+    <!-- ============ 05 · TÉMOIGNAGES ============ -->
+    <section id="temoignages" class="panel">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">04 — Témoignages</span>
+          <h2 class="section-title">Ce qu'ils<br><em>en disent</em></h2>
+        </div>
 
-  <!-- Contact -->
-<section id="contact">
-  <div class="container">
-    <h2 class="section-title">Me contacter</h2>
-    <p class="section-desc">Un projet, une mission freelance ou une collaboration ? Écrivez-moi 👇</p>
-    <form id="contact-form">
-      <div class="grid-2">
-        <div>
-          <label for="nom">Nom</label>
-          <input id="nom" name="from_name" type="text" placeholder="Votre nom" required>
+        <div class="testimonials">
+          <figure class="quote">
+            <blockquote>"Prestation impeccable, délais tenus et code propre."</blockquote>
+            <figcaption>
+              <img class="avatar" src="image/IMG-20250610-WA0005.jpg" alt="Fandresena" />
+              <div>
+                <strong>Fandresena</strong>
+                <span>Developer</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="quote">
+            <blockquote>"Très pédagogue et force de proposition. Je recommande."</blockquote>
+            <figcaption>
+              <img class="avatar" src="image/sergia.jpeg" alt="Sergia" />
+              <div>
+                <strong>Sergia</strong>
+                <span>Developer</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="quote">
+            <blockquote>"Migration vers SPA fluide, performances x2."</blockquote>
+            <figcaption>
+              <img class="avatar" src="image/tong.jpeg" alt="Malala Tong" />
+              <div>
+                <strong>Malala Tong</strong>
+                <span>Developer</span>
+              </div>
+            </figcaption>
+          </figure>
         </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" name="from_email" type="email" placeholder="vous@exemple.com" required>
+      </div>
+    </section>
+
+    <!-- ============ 06 · CONTACT ============ -->
+    <section id="contact" class="panel panel-contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-intro">
+            <span class="section-num">05 — Contact</span>
+            <h2 class="section-title">Travaillons<br><em>ensemble.</em></h2>
+            <p class="section-desc">
+              Un projet, une mission freelance ou une collaboration ? Écrivez-moi.
+            </p>
+
+            <div class="contact-info">
+              <a href="mailto:rafaltanjonaniaina@gmail.com">
+                <span class="label">Email</span>
+                <span class="value">rafaltanjonaniaina@gmail.com</span>
+              </a>
+              <a href="tel:+261382285078">
+                <span class="label">Téléphone</span>
+                <span class="value">+261 38 22 850 78</span>
+              </a>
+              <a href="https://www.linkedin.com/in/tanjona-niaina-rafalimamonjy-56463231a/" target="_blank"
+                rel="noopener">
+                <span class="label">LinkedIn</span>
+                <span class="value">tanjona-niaina ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <form id="contact-form" class="contact-form">
+            <div class="grid-2">
+              <div class="field">
+                <label for="nom">Nom</label>
+                <input id="nom" name="from_name" type="text" placeholder="Votre nom" required>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="from_email" type="email" placeholder="vous@exemple.com" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Décrivez brièvement votre besoin"
+                required></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="btn" type="submit">Envoyer le message →</button>
+              <small id="form-status" aria-live="polite"></small>
+            </div>
+          </form>
         </div>
       </div>
-      <div>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Décrivez brièvement votre besoin" required></textarea>
-      </div>
-      <div style="display:flex;gap:10px;align-items:center">
-        <button class="btn" type="submit">Envoyer</button>
-        <small id="form-status" aria-live="polite" style="color:var(--muted)"></small>
-      </div>
-    </form>
-    <div style="margin-top:20px;color:var(--muted)">
-      <strong>Email direct :</strong> <a href="mailto:rafaltanjonaniaina@gmail.com">rafaltanjonaniaina@gmail.com</a>
-      &nbsp;•&nbsp; <strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/tanjona-niaina-rafalimamonjy-56463231a/" target="_blank" rel="noopener">niaina</a>
-      &nbsp;•&nbsp; <strong>Télephone :</strong> <a href="tel:+261382285078" target="_blank" rel="noopener">+261 38 22 850 78</a>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <span>© <span id="year"></span>Tanjona Niaina</span>
+          <div class="footer-links">
+            <a href="#hero">Haut de page</a>
+            <a href="#projets">Projets</a>
+            <a href="https://github.com/TanjonaCod" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- Popup projet perso -->
+  <div id="popup-overlay" role="dialog" aria-modal="true">
+    <div class="popup">
+      <div class="popup-icon">🔒</div>
+      <h2>Projet personnel</h2>
+      <p>Aucun accès public pour le moment.<br>Contactez-moi pour une démo privée.</p>
+      <button id="close-popup">Compris</button>
     </div>
   </div>
-</section>
 
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <span>© <span id="year"></span> Niaina. Tous droits réservés.</span>
-      <div style="display:flex;gap:12px">
-        <a href="#accueil">Haut de page</a>
-        <a href="#projets">Projets</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-const form = document.getElementById('contact-form');
-const statusEl = document.getElementById('form-status');
-
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const name = document.getElementById('nom').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  // Validation
-  if (!name || !email || !message) {
-    statusEl.textContent = "❌ Tout les champs sont obligatoire.";
-    return;
-  }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    statusEl.textContent = "❌ Email invalide.";
-    return;
-  }
-
-  statusEl.textContent = "📧 ouverture de votre boite email...";
-
-  // Sujet & contenu
-  const subject = encodeURIComponent("Nouveau message depuis le site");
-  const body = encodeURIComponent(
-    `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-  );
-
-  // SOLOINAO amin'ny email-nao
-  const toEmail = "rafaltanjonaniaina@gmail.com";
-
-  // Manokatra Gmail / Outlook / Mail app
-  window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
-});
-
-    // Burger menu (mobile)
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('nav ul');
-    if(toggle){
-      toggle.addEventListener('click', () => {
-        menu.classList.toggle('active')
-      });
-    }
-
-    document.querySelectorAll('.nav-link').forEach(lien =>{
-      lien.addEventListener('click',()=>{
-        menu.classList.remove('active')
-      })
-    })
-
-    //pop 
-    document.querySelectorAll('.perso').forEach(btn =>{
-        btn.addEventListener("click",()=>{
-            document.querySelector('#popup-overlay').classList.add('active')
-        })
-    })
-
-    document.getElementById("close-popup").addEventListener("click", () => {
-          document.getElementById("popup-overlay").classList.remove('active')
-    });
-
-
-    // Smooth scroll fix for sticky header offset (optional)
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href');
-        const el = document.querySelector(id);
-        if(el){
-          e.preventDefault();
-          const y = el.getBoundingClientRect().top + window.scrollY - 70;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      })
-    })
-  </script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
